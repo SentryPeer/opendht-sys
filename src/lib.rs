@@ -1,14 +1,11 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2025 Gavin Henry <ghenry@sentrypeer.org>
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// Ignore Rust's style conventions for our C FFI bindings
+#![allow(non_upper_case_globals)]
+#![allow(non_camel_case_types)]
+#![allow(non_snake_case)]
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+// Use the include! macro to dump our generated bindings right into our crate's main entry point,
+// src/lib.rs:
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));

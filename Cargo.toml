@@ -1,9 +1,18 @@
 [package]
 name = "opendht-sys"
 version = "0.1.0"
-authors = ["Gavin Henry <ghenry@sentrypeer.org>"]
-description = "Rust bindings to the OpenDHT C library"
 edition = "2021"
+authors = ["Gavin Henry <ghenry@sentrypeer.org>"]
+description = "Raw bindings to the OpenDHT C library"
+license = "GPL-3.0"
 links = "opendht-c"
+repository = "https://github.com/SentryPeer/opendht-sys.git"
 
 [dependencies]
+libc = "0.2.169"
+
+[build-dependencies]
+bindgen = "0.71.1"
+cc = "1.2.14"
+cmake = "0.1.54"
+pkg-config = "0.3.31"
