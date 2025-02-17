@@ -1,0 +1,9 @@
+[package]
+name = "opendht-sys"
+version = "0.1.0"
+authors = ["Gavin Henry <ghenry@sentrypeer.org>"]
+description = "Rust bindings to the OpenDHT C library"
+edition = "2021"
+links = "opendht-c"
+
+[dependencies]

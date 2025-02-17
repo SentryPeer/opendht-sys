@@ -1,0 +1,3 @@
+[submodule "vendor/opendht"]
+	path = vendor/opendht
+	url = https://github.com/savoirfairelinux/opendht.git
