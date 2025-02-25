@@ -29,7 +29,7 @@ fn main() {
     } else {
         // try cmake
         let dst = Config::new(submodule_path)
-            .generator("make")
+            .generator("Unix Makefiles")
             .define("CMAKE_INSTALL_LIBDIR", "lib")
             .define("OPENDHT_C", "ON")
             .define("BUILD_TESTING", "OFF")
