@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0
 // Copyright (c) 2025 Gavin Henry <ghenry@sentrypeer.org>
 
 extern crate bindgen;
@@ -29,7 +29,7 @@ fn main() {
     } else {
         // try cmake
         let dst = Config::new(submodule_path)
-            .generator("Unix Makefiles")
+            .generator("Ninja")
             .define("CMAKE_INSTALL_LIBDIR", "lib")
             .define("OPENDHT_C", "ON")
             .define("BUILD_TESTING", "OFF")
