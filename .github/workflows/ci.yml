@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  CSONE_AUTH_RESELLER: ${{ secrets.CSONE_AUTH_RESELLER }}
+  CSONE_AUTH_USER: ${{ secrets.CSONE_AUTH_USER }}
+  CSONE_AUTH_PASSWORD: ${{ secrets.CSONE_AUTH_PASSWORD }}
+  CSONE_AUTH_FOR: ${{ secrets.CSONE_AUTH_FOR }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: cargo build --verbose
+    - name: Run tests
+      run: cargo test --verbose

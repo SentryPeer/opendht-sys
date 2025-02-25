@@ -1,0 +1,28 @@
+name: Rust Clippy Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  clippy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: stable
+        components: clippy
+
+    # For things in our bindings.rs that we don't own, i.e.
+    # warning: unsafe function's docs are missing a `# Safety` section
+    - name: Run clippy
+      run: cargo clippy -- -D warnings -A clippy::missing_safety_doc

@@ -13,56 +13,34 @@ use std::process::Command;
 fn main() {
     // Initialize and update the Git submodule
     Command::new("git")
-        .args(&["submodule", "update", "--init", "--recursive"])
+        .args(["submodule", "update", "--init", "--recursive"])
         .status()
         .expect("Failed to initialize/update submodules");
 
     let submodule_path = "vendor/opendht";
 
-    // Try to find the OpenDHT library using pkg-config
+    // Try to find the OpenDHT library using pkg-config first
     if pkg_config::Config::new()
         .atleast_version("2.3.5")
         .probe("opendht-c")
         .is_ok()
     {
-        // If pkg-config finds the library, it will set the necessary
-        // environment variables for linking.
-        //}
-        // try cmake
-        // else if let dst = Config::new(submodule_path)
-        //     .generator("Ninja")
-        //     .define("CMAKE_INSTALL_LIBDIR", "lib")
-        //     .define("OPENDHT_C", "ON")
-        //     .define("CMAKE_BUILD_TYPE", "MinSizeRel")
-        //     .build()
-        // {
-        //     println!("cargo:rustc-link-search=native={}/lib", dst.display());
-        //     println!("cargo:rustc-link-lib=static=opendht-c");
+        // If found, the necessary env vars will get set automatically
     } else {
-        // Compile the OpenDHT C library with autotools
-        //
-        // From autogen.sh as it doesn't have a shebang at the top
-        // `autoreconf` will be system wide. No need for ./ in front
-        Command::new("autoreconf")
-            .args(&["--install", "--verbose", "-Wall"])
-            .current_dir(submodule_path)
-            .status()
-            .expect("Failed to run autoreconf");
+        // try cmake
+        let dst = Config::new(submodule_path)
+            .generator("Ninja")
+            .define("CMAKE_INSTALL_LIBDIR", "lib")
+            .define("OPENDHT_C", "ON")
+            .define("BUILD_TESTING", "OFF")
+            .define("CMAKE_BUILD_TYPE", "MinSizeRel")
+            .build();
 
-        // This is local to the submodule_path, so needs ./ in front
-        Command::new("./configure")
-            .args(&["--disable-python", "--disable-tools"])
-            .current_dir(submodule_path)
-            .status()
-            .expect("Failed to run ./configure");
+        println!("cargo:rustc-link-search=native={}/lib", dst.display());
 
-        // `make` will be system wide. No need for ./ in front
-        Command::new("make")
-            .current_dir(submodule_path)
-            .status()
-            .expect("Failed to run make");
-
-        println!("cargo:rustc-link-search={}/src/.libs", submodule_path);
+        // TODO: Handle macOS (usages static linking by default) and Windows
+        // (if Windows is supported)
+        println!("cargo:rustc-link-lib=opendht");
         println!("cargo:rustc-link-lib=opendht-c");
     }
 
