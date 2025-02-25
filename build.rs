@@ -1,5 +1,5 @@
-/* SPDX-License-Identifier: MIT */
-/* Copyright (c) 2025 Gavin Henry <ghenry@sentrypeer.org> */
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2025 Gavin Henry <ghenry@sentrypeer.org>
 
 extern crate bindgen;
 extern crate cc;
