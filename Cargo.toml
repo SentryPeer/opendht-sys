@@ -13,6 +13,6 @@ libc = "0.2.169"
 
 [build-dependencies]
 bindgen = "0.71.1"
-cc = "1.2.14"
+cc = "1.2.15"
 cmake = "0.1.54"
 pkg-config = "0.3.31"
