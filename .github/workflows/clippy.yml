@@ -37,8 +37,6 @@ jobs:
         libmsgpack-cxx-dev \
         libargon2-dev \
         libasio-dev \
-        libjsoncpp-dev \
-        libssl-dev \
         libfmt-dev \
         nettle-dev \
         ninja-build -y
