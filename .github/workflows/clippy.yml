@@ -33,7 +33,7 @@ jobs:
         sudo apt-get -y upgrade
         sudo apt-get install \
         pkg-config \
-        libgnutls-dev \
+        libgnutls28-dev \
         libmsgpack-cxx-dev \
         libargon2-dev \
         libasio-dev \
