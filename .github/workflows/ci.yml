@@ -26,8 +26,8 @@ jobs:
         sudo apt-get install \
         pkg-config \
         libgnutls28-dev \
-        libmsgpack-cxx-dev \
-        libreadline6-dev \        
+        libmsgpack-dev \
+        libreadline6-dev \
         libargon2-dev \
         libasio-dev \
         libfmt-dev \
