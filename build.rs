@@ -32,11 +32,18 @@ fn main() {
             .generator("Ninja")
             .define("CMAKE_INSTALL_LIBDIR", "lib")
             .define("OPENDHT_C", "ON")
+            .define("OPENDHT_PYTHON", "OFF")
+            .define("OPENDHT_PROXY_OPENSSL", "OFF")
+            .define("OPENDHT_HTTP", "OFF")
+            .define("OPENDHT_TOOLS", "OFF")
             .define("BUILD_TESTING", "OFF")
             .define("CMAKE_BUILD_TYPE", "MinSizeRel")
             .build();
 
         println!("cargo:rustc-link-search=native={}/lib", dst.display());
+
+        // Search for headers in our OUT_DIR
+        println!("cargo:include={}/include", dst.display());
 
         // TODO: Handle macOS (usages static linking by default) and Windows
         // (if Windows is supported)
@@ -47,6 +54,7 @@ fn main() {
     // Generate bindings
     let bindings = bindgen::Builder::default()
         .header("wrapper.h")
+        .clang_arg("-Ivendor/opendht/include")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
         .expect("Unable to generate bindings");
