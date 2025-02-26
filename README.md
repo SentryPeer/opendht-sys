@@ -19,12 +19,12 @@ If we build via `cmake`, we need the following installed first (Debian or Ubuntu
 
 * `fmt-dev`
 * `pkg-config` 
-* `libgnutls28-dev` 
-* `libmsgpack-dev` 
-* `libargon2-dev` 
-* `libasio-dev` 
-* `libfmt-dev` 
-* `nettle-dev`
+* `libgnutls28-dev` - yes, on crates.io
+* `libmsgpack-dev`  - no
+* `libargon2-dev`   - yes, on crates.io
+* `libasio-dev`     - yes, on crates.io
+* `libfmt-dev`      - no, needed?
+* `nettle-dev`      - yes, on crates.io
 * `ninja-build` 
 
 ### -sys crates

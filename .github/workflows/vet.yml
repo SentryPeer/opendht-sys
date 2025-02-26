@@ -28,5 +28,4 @@ jobs:
         run: cargo install cargo-vet
 
       - name: Run cargo vet
-        run: |
-          cargo run -- vet --locked
+        run: cargo vet
