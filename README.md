@@ -22,7 +22,7 @@ If we build via `cmake`, we need the following installed first (Debian or Ubuntu
 * `libgnutls28-dev` - yes, on crates.io
 * `libmsgpack-dev`  - no
 * `libargon2-dev`   - yes, on crates.io
-* `libasio-dev`     - yes, on crates.io
+* `libasio-dev`     - no
 * `libfmt-dev`      - no, needed?
 * `nettle-dev`      - yes, on crates.io
 * `ninja-build` 
