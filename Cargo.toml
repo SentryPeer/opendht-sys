@@ -12,12 +12,14 @@ readme = "README.md"
 
 # For crates.io
 include = [
+    "vendor/opendht",
     "**/*.rs",
+    "./.gitignore",
+    "./.gitmodules",
     "Cargo.toml",
-    "README.md",
     "CHANGELOG.md",
-    "wrapper.h",
-    ".gitmodules",
+    "README.md",
+    "wrapper.h"
 ]
 
 [dependencies]
