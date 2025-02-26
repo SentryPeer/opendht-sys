@@ -25,8 +25,12 @@ jobs:
         sudo apt-get -y upgrade
         sudo apt-get install \
         pkg-config \
+        libgnutls28-dev \
         libmsgpack-dev \
+        libargon2-dev \
         libasio-dev \
+        libfmt-dev \
+        nettle-dev \
         ninja-build -y
     - name: Build
       run: cargo build --verbose
