@@ -10,10 +10,15 @@ links = "opendht-c"
 repository = "https://github.com/SentryPeer/opendht-sys.git"
 readme = "README.md"
 
-exclude = [
-    "vendor/opendht/*",
-    ".github/*",
-    "supply-chain/*"
+# For crates.io
+include = [
+    "vendor/opendht/COPYING",
+    "**/*.rs",
+    "Cargo.toml",
+    "README.md",
+    "CHANGELOG.md",
+    "wrapper.h",
+    ".gitmodules",
 ]
 
 [dependencies]
