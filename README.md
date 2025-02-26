@@ -1,3 +1,11 @@
+# Low-level bindings to the OpenDHT C library
+
+[![Stability: Active](https://masterminds.github.io/stability/active.svg)](https://masterminds.github.io/stability/active.html)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/sentrypeer/opendht-sys?sort=semver)](https://github.com/SentryPeer/opendht-sus/releases)
+[![CI](https://github.com/SentryPeer/opendht-sys/actions/workflows/ci.yml/badge.svg)](https://github.com/SentryPeer/opendht-sys/actions/workflows/ci.yml)
+[![Crates.io](https://img.shields.io/crates/v/opendht-sys)](https://crates.io/crates/opendht-sys)
+[![Docs.rs](https://docs.rs/opendht-sys/badge.svg)](https://docs.rs/opendht-sys)
+
 # Building opendht-sys
 
 ## Steps we take
@@ -7,9 +15,19 @@
 
 ## Build Requirements
 
-If we build via `cmake`, we need the following installed first:
+If we build via `cmake`, we need the following installed first (Debian or Ubuntu):
 
-TODO
+* `fmt-dev`
+* `pkg-config` 
+* `libgnutls28-dev` 
+* `libmsgpack-dev` 
+* `libargon2-dev` 
+* `libasio-dev` 
+* `libfmt-dev` 
+* `nettle-dev`
+* `ninja-build` 
 
-- `fmt-dev`
+### -sys crates
+
+TODO: All of the above will be `-sys` crates and set as dependencies in our `Cargo.toml` file.
 

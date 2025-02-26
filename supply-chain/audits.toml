@@ -1,4 +1,12 @@
 
 # cargo-vet audits file
 
-[audits]
+[[audits.cc]]
+who = "Gavin Henry <ghenry@suretecsystems.com>"
+criteria = "safe-to-deploy"
+delta = "1.2.14 -> 1.2.15"
+
+[[audits.libc]]
+who = "Gavin Henry <ghenry@suretecsystems.com>"
+criteria = "safe-to-deploy"
+delta = "0.2.169 -> 0.2.170"
