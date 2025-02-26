@@ -12,7 +12,6 @@ readme = "README.md"
 
 # For crates.io
 include = [
-    "vendor/opendht/COPYING",
     "**/*.rs",
     "Cargo.toml",
     "README.md",
