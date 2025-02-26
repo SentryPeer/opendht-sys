@@ -1,6 +1,6 @@
 [package]
 name = "opendht-sys"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 authors = ["Gavin Henry <ghenry@sentrypeer.org>"]
 description = "Low-level bindings to the OpenDHT C library"
