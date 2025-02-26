@@ -1,7 +1,7 @@
 # Low-level bindings to the OpenDHT C library
 
 [![Stability: Active](https://masterminds.github.io/stability/active.svg)](https://masterminds.github.io/stability/active.html)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/sentrypeer/opendht-sys?sort=semver)](https://github.com/SentryPeer/opendht-sus/releases)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/sentrypeer/opendht-sys?sort=semver)](https://github.com/SentryPeer/opendht-sys/releases)
 [![CI](https://github.com/SentryPeer/opendht-sys/actions/workflows/ci.yml/badge.svg)](https://github.com/SentryPeer/opendht-sys/actions/workflows/ci.yml)
 [![Crates.io](https://img.shields.io/crates/v/opendht-sys)](https://crates.io/crates/opendht-sys)
 [![Docs.rs](https://docs.rs/opendht-sys/badge.svg)](https://docs.rs/opendht-sys)
