@@ -12,7 +12,21 @@ readme = "README.md"
 
 # For crates.io
 include = [
-    "vendor/opendht",
+    "vendor/opendht/CMakeLists.txt",
+    "vendor/opendht/COPYING",
+    "vendor/opendht/Makefile.am",
+    "vendor/opendht/README.md",
+    "vendor/opendht/autogen.sh",
+    "vendor/opendht/c",
+    "vendor/opendht/cmake",
+    "vendor/opendht/configure.ac",
+    "vendor/opendht/include",
+    "vendor/opendht/m4",
+    "vendor/opendht/meson.build",
+    "vendor/opendht/meson.options",
+    "vendor/opendht/opendht-c.pc.in",
+    "vendor/opendht/opendht.pc.in",
+    "vendor/opendht/src",
     "**/*.rs",
     "./.gitignore",
     "./.gitmodules",
