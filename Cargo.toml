@@ -40,7 +40,7 @@ include = [
 libc = "0.2.172"
 
 [build-dependencies]
-bindgen = "0.71.1"
+bindgen = "0.72.0"
 cc = "1.2.25"
 cmake = "0.1.54"
 pkg-config = "0.3.32"
