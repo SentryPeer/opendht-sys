@@ -41,6 +41,6 @@ libc = "0.2.172"
 
 [build-dependencies]
 bindgen = "0.71.1"
-cc = "1.2.25"
+cc = "1.2.27"
 cmake = "0.1.54"
 pkg-config = "0.3.32"
